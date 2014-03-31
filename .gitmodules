@@ -1,0 +1,3 @@
+[submodule "Analytics/Providers/Expa"]
+	path = Analytics/Providers/Expa
+	url = https://github.com/expa/ExpaProvider.git
