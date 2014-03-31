@@ -26,6 +26,8 @@
 		7E94C0F018932A5B004BD132 /* KWBlockMatchEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E94C0EF18932A5B004BD132 /* KWBlockMatchEvaluator.m */; };
 		7EA1CA851898033000DC8637 /* KWNotificationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA1CA841898033000DC8637 /* KWNotificationMatcher.m */; };
 		B8A1B15E08994855871D1685 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B38155D048462482A91850 /* libPods.a */; };
+		D0AB38E818EA011300E09A3D /* ExpaProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = D0AB38E518EA011300E09A3D /* ExpaProvider.h */; };
+		D0AB38E918EA011300E09A3D /* ExpaProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AB38E618EA011300E09A3D /* ExpaProvider.m */; };
 		D31C8F7E18A2D83700DA22A6 /* MPNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = D31C8F7D18A2D83700DA22A6 /* MPNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D331BCED185BFAA1007CB22F /* MPSurvey.h in Headers */ = {isa = PBXBuildFile; fileRef = D331BCEC185BFAA1007CB22F /* MPSurvey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D331BCF2185BFF49007CB22F /* CRFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = D331BCF0185BFF49007CB22F /* CRFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -136,6 +138,8 @@
 		7EA1CA831898033000DC8637 /* KWNotificationMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWNotificationMatcher.h; sourceTree = "<group>"; };
 		7EA1CA841898033000DC8637 /* KWNotificationMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWNotificationMatcher.m; sourceTree = "<group>"; };
 		8D0FCA5DB8CF4351BA2EC04C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D0AB38E518EA011300E09A3D /* ExpaProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpaProvider.h; sourceTree = "<group>"; };
+		D0AB38E618EA011300E09A3D /* ExpaProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpaProvider.m; sourceTree = "<group>"; };
 		D309DBF218A2BD2900BA9F31 /* libFlurry_4.3.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.3.1.a; path = Pods/FlurrySDK/Flurry/libFlurry_4.3.1.a; sourceTree = "<group>"; };
 		D31C8F7D18A2D83700DA22A6 /* MPNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPNotification.h; path = Pods/Mixpanel/Mixpanel/MPNotification.h; sourceTree = "<group>"; };
 		D331BCEC185BFAA1007CB22F /* MPSurvey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPSurvey.h; path = Pods/Mixpanel/Mixpanel/MPSurvey.h; sourceTree = "<group>"; };
@@ -277,6 +281,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0AB38E418EA011300E09A3D /* Expa */ = {
+			isa = PBXGroup;
+			children = (
+				D0AB38E518EA011300E09A3D /* ExpaProvider.h */,
+				D0AB38E618EA011300E09A3D /* ExpaProvider.m */,
+			);
+			name = Expa;
+			path = Analytics/Providers/Expa;
+			sourceTree = SOURCE_ROOT;
+		};
 		D331BD101860EA83007CB22F /* Tapstream */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +386,7 @@
 				EACB4DB317C0BB3100624129 /* Bugsnag */,
 				EACB4DB917C0BB3100624129 /* Countly */,
 				D3ABF62C1846F6E000FAAB2B /* Crittercism */,
+				D0AB38E418EA011300E09A3D /* Expa */,
 				EACB4DBC17C0BB3100624129 /* Flurry */,
 				EACB4DBF17C0BB3100624129 /* GoogleAnalytics */,
 				EACB4DC517C0BB3100624129 /* Localytics */,
@@ -544,6 +559,7 @@
 				EA25892317C6979D000CEF61 /* Analytics.h in Headers */,
 				D3C07FBF185954D000649011 /* Bugsnag.h in Headers */,
 				D371F32E185942BB0053337D /* Crittercism.h in Headers */,
+				D0AB38E818EA011300E09A3D /* ExpaProvider.h in Headers */,
 				D331BCF2185BFF49007CB22F /* CRFilter.h in Headers */,
 				D331BCF3185BFF4A007CB22F /* CrittercismDelegate.h in Headers */,
 				D371F330185942C90053337D /* Flurry.h in Headers */,
@@ -856,6 +872,7 @@
 				EACB4DE317C0BB3100624129 /* LocalyticsProvider.m in Sources */,
 				D331BD141860EA9A007CB22F /* TapstreamProvider.m in Sources */,
 				EACB4DE517C0BB3100624129 /* MixpanelProvider.m in Sources */,
+				D0AB38E918EA011300E09A3D /* ExpaProvider.m in Sources */,
 				EACB4DE717C0BB3100624129 /* SegmentioProvider.m in Sources */,
 				EACB4DEB17C0BB3100624129 /* AnalyticsUtils.m in Sources */,
 				EAA604CA17C28C7C00911919 /* AnalyticsRequest.m in Sources */,
