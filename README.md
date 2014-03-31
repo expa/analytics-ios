@@ -9,17 +9,15 @@ Special thanks to [Tony Xiao](https://github.com/tonyxiao), [Lee Hasiuk](https:/
 
 Documentation is available at [https://segment.io/libraries/ios](https://segment.io/libraries/ios).
 
-## Development
+## Install with ExpaProvider
 
-libAnalytics itself strives to have as few dependencies as possible to create the most compatible and 
-lightweight Analytics SDK for ObjC developers. However, there is no such restriction during testing time,
-and in order to contribute to the SDK, you will need cocoapods, as well as an additional pod specs repo. 
-This can be accomplished as follow
+ExpaProvider is an add-on to send your analytics data to Expa in addition to segment.io providers.
 
     [sudo] gem install cocoapods
     pod repo add Segmentio-Podspecs git@github.com:segmentio/Podspecs.git
     pod repo add Collections-Podspecs git@github.com:collections/Podspecs.git
     pod install
+    git submodule update --init --remote
 
 ## License
 
