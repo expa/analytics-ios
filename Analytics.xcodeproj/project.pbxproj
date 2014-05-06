@@ -30,7 +30,7 @@
 		B8A1B15E08994855871D1685 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B38155D048462482A91850 /* libPods.a */; };
 		C97697CB190EF63F005C2D5E /* QuantcastMeasurement.h in Headers */ = {isa = PBXBuildFile; fileRef = C97697CA190EF63F005C2D5E /* QuantcastMeasurement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9BC0EF7190F03F500557AAC /* QuantcastOptOutDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BC0EF6190F03F500557AAC /* QuantcastOptOutDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D00B124A19185C46004F7595 /* ExpaProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = D00B124719185C46004F7595 /* ExpaProvider.h */; };
+		D00B124A19185C46004F7595 /* ExpaProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = D00B124719185C46004F7595 /* ExpaProvider.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D00B124B19185C46004F7595 /* ExpaProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D00B124819185C46004F7595 /* ExpaProvider.m */; };
 		D31C8F7E18A2D83700DA22A6 /* MPNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = D31C8F7D18A2D83700DA22A6 /* MPNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D331BCED185BFAA1007CB22F /* MPSurvey.h in Headers */ = {isa = PBXBuildFile; fileRef = D331BCEC185BFAA1007CB22F /* MPSurvey.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -614,7 +614,6 @@
 				D331BD2B1860F5F0007CB22F /* TSApi.h in Headers */,
 				D331BD2C1860F5F0007CB22F /* TSAppEventSource.h in Headers */,
 				D331BD2D1860F5F0007CB22F /* TSConfig.h in Headers */,
-				D00B124A19185C46004F7595 /* ExpaProvider.h in Headers */,
 				D331BD2E1860F5F0007CB22F /* TSCore.h in Headers */,
 				D331BD2F1860F5F0007CB22F /* TSCoreListener.h in Headers */,
 				D331BD301860F5F0007CB22F /* TSDelegate.h in Headers */,
@@ -629,6 +628,7 @@
 				D331BD381860F5F0007CB22F /* TSUtils.h in Headers */,
 				D331BD0A185FDDEA007CB22F /* BugsnagMetaData.h in Headers */,
 				D331BD0B185FDDEA007CB22F /* BugsnagNotifier.h in Headers */,
+				D00B124A19185C46004F7595 /* ExpaProvider.h in Headers */,
 				EACB4DE617C0BB3100624129 /* SegmentioProvider.h in Headers */,
 				EA65F96617C2ABA600389A1A /* AnalyticsProvider.h in Headers */,
 				EACB4DD217C0BB3100624129 /* AmplitudeProvider.h in Headers */,
