@@ -124,8 +124,6 @@
 		EACB4DE317C0BB3100624129 /* LocalyticsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = EACB4DC717C0BB3100624129 /* LocalyticsProvider.m */; };
 		EACB4DE417C0BB3100624129 /* MixpanelProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = EACB4DC917C0BB3100624129 /* MixpanelProvider.h */; };
 		EACB4DE517C0BB3100624129 /* MixpanelProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = EACB4DCA17C0BB3100624129 /* MixpanelProvider.m */; };
-		EACB4DE617C0BB3100624129 /* SegmentioProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = EACB4DCC17C0BB3100624129 /* SegmentioProvider.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		EACB4DE717C0BB3100624129 /* SegmentioProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = EACB4DCD17C0BB3100624129 /* SegmentioProvider.m */; };
 		EACB4DEA17C0BB3100624129 /* AnalyticsUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EACB4DD017C0BB3100624129 /* AnalyticsUtils.h */; };
 		EACB4DEB17C0BB3100624129 /* AnalyticsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EACB4DD117C0BB3100624129 /* AnalyticsUtils.m */; };
 		EAD415C717C9B72D00EB0490 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA722AF217C87BB00016E8B0 /* SenTestingKit.framework */; };
@@ -262,8 +260,6 @@
 		EACB4DC717C0BB3100624129 /* LocalyticsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsProvider.m; sourceTree = "<group>"; };
 		EACB4DC917C0BB3100624129 /* MixpanelProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixpanelProvider.h; sourceTree = "<group>"; };
 		EACB4DCA17C0BB3100624129 /* MixpanelProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixpanelProvider.m; sourceTree = "<group>"; };
-		EACB4DCC17C0BB3100624129 /* SegmentioProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentioProvider.h; sourceTree = "<group>"; };
-		EACB4DCD17C0BB3100624129 /* SegmentioProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentioProvider.m; sourceTree = "<group>"; };
 		EACB4DD017C0BB3100624129 /* AnalyticsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsUtils.h; sourceTree = "<group>"; };
 		EACB4DD117C0BB3100624129 /* AnalyticsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsUtils.m; sourceTree = "<group>"; };
 		F7200B7317659B2F003F3138 /* libAnalytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAnalytics.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -447,7 +443,6 @@
 				EACB4DC817C0BB3100624129 /* Mixpanel */,
 				32031D17190C4D5B008F7DA8 /* Quantcast */,
 				D331BD101860EA83007CB22F /* Tapstream */,
-				EACB4DCB17C0BB3100624129 /* Segmentio */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -513,15 +508,6 @@
 				EACB4DCA17C0BB3100624129 /* MixpanelProvider.m */,
 			);
 			path = Mixpanel;
-			sourceTree = "<group>";
-		};
-		EACB4DCB17C0BB3100624129 /* Segmentio */ = {
-			isa = PBXGroup;
-			children = (
-				EACB4DCC17C0BB3100624129 /* SegmentioProvider.h */,
-				EACB4DCD17C0BB3100624129 /* SegmentioProvider.m */,
-			);
-			path = Segmentio;
 			sourceTree = "<group>";
 		};
 		F7200B6A17659B2F003F3138 = {
@@ -667,7 +653,6 @@
 				D331BD0A185FDDEA007CB22F /* BugsnagMetaData.h in Headers */,
 				D331BD0B185FDDEA007CB22F /* BugsnagNotifier.h in Headers */,
 				D00B124A19185C46004F7595 /* ExpaProvider.h in Headers */,
-				EACB4DE617C0BB3100624129 /* SegmentioProvider.h in Headers */,
 				EA65F96617C2ABA600389A1A /* AnalyticsProvider.h in Headers */,
 				EACB4DD217C0BB3100624129 /* AmplitudeProvider.h in Headers */,
 				EACB4DD617C0BB3100624129 /* BugsnagProvider.h in Headers */,
@@ -945,7 +930,6 @@
 				EACB4DE317C0BB3100624129 /* LocalyticsProvider.m in Sources */,
 				D331BD141860EA9A007CB22F /* TapstreamProvider.m in Sources */,
 				EACB4DE517C0BB3100624129 /* MixpanelProvider.m in Sources */,
-				EACB4DE717C0BB3100624129 /* SegmentioProvider.m in Sources */,
 				EACB4DEB17C0BB3100624129 /* AnalyticsUtils.m in Sources */,
 				32031D1B190C4D77008F7DA8 /* QuantcastProvider.m in Sources */,
 				EAA604CA17C28C7C00911919 /* AnalyticsRequest.m in Sources */,

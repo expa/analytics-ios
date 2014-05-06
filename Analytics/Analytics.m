@@ -254,24 +254,25 @@
 }
 
 - (void)refreshSettings {
-    if (!_settingsRequest) {
-        NSString *urlString = [NSString stringWithFormat:@"https://api.segment.io/project/%@/settings", self.secret];
-        NSURL *url = [NSURL URLWithString:urlString];
-        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
-        [urlRequest setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
-        [urlRequest setHTTPMethod:@"GET"];
-        SOLog(@"%@ Sending API settings request: %@", self, urlRequest);
-
-        _settingsRequest = [AnalyticsRequest startWithURLRequest:urlRequest completion:^{
-            dispatch_specific_async(_serialQueue, ^{
-                SOLog(@"%@ Received API settings response: %@", self, _settingsRequest.responseJSON);
-                if (!_settingsRequest.error) {
-                    [self setCachedSettings:_settingsRequest.responseJSON];
-                }
-                _settingsRequest = nil;
-            });
-        }];
-    }
+    [self setCachedSettings:@{@"":@""}];
+//    if (!_settingsRequest) {
+//        NSString *urlString = [NSString stringWithFormat:@"https://api.segment.io/project/%@/settings", self.secret];
+//        NSURL *url = [NSURL URLWithString:urlString];
+//        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+//        [urlRequest setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+//        [urlRequest setHTTPMethod:@"GET"];
+//        SOLog(@"%@ Sending API settings request: %@", self, urlRequest);
+//
+//        _settingsRequest = [AnalyticsRequest startWithURLRequest:urlRequest completion:^{
+//            dispatch_specific_async(_serialQueue, ^{
+//                SOLog(@"%@ Received API settings response: %@", self, _settingsRequest.responseJSON);
+//                if (!_settingsRequest.error) {
+//                    [self setCachedSettings:_settingsRequest.responseJSON];
+//                }
+//                _settingsRequest = nil;
+//            });
+//        }];
+//    }
 }
 
 #pragma mark - Class Methods
