@@ -1,222 +1,181 @@
-//
-//  SegmentioTests.m
-//  Analytics
-//
-//  Created by Tony Xiao on 8/23/13.
-//  Copyright (c) 2013 Segment.io. All rights reserved.
-//
+// SegmentioTests.m
+// Copyright (c) 2014 Segment.io. All rights reserved.
 
-#import <Kiwi/Kiwi.h>
-#import "AnalyticsUtils.h"
-#import "SegmentioProvider.h"
-#import "KWNotificationMatcher.h"
+#import <XCTest/XCTest.h>
+#import <Expecta/Expecta.h>
+#import "SEGAnalytics.h"
+#import "SEGAnalyticsUtils.h"
+#import "SEGSegmentioIntegration.h"
+#import <TRVSKit/TRVSAssertions.h>
 
-@interface SegmentioProvider (Private)
+@interface SEGSegmentioIntegration (Private)
 @property (nonatomic, readonly) NSMutableArray *queue;
+@property (nonatomic, readonly) NSMutableDictionary *context;
 @end
 
-SPEC_BEGIN(SegmentioTests)
+@interface SegmentioIntegrationDevelopment : SEGSegmentioIntegration
 
-describe(@"Segment.io", ^{
-    SetShowDebugLogs(YES);
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    __block SegmentioProvider *segmentio = nil;
-    beforeAll(^{
-        segmentio = [[SegmentioProvider alloc] initWithSecret:@"testsecret" flushAt:2 flushAfter:2];
-    });
-    beforeEach(^{
-        [segmentio reset];
-    });
-    
-    it(@"Should have a sessionID", ^{
-        [segmentio.sessionId shouldNotBeNil];
-    });
-    
-    it(@"Should track", ^{
-        NSString *eventName = @"Purchased an iPhone 6";
-        [segmentio track:eventName properties:nil options:nil];
+@end
 
-        [[expectFutureValue(@(segmentio.queue.count)) shouldEventually] equal:@1];
+@implementation SegmentioIntegrationDevelopment
 
-        NSDictionary *queuedTrack = segmentio.queue[0];
-        [[queuedTrack[@"action"] should] equal:@"track"];
-        [[queuedTrack[@"event"] should] equal:eventName];
-        [queuedTrack[@"timestamp"] shouldNotBeNil];
-        [queuedTrack[@"properties"] shouldBeNil];
-        
-        // test for context object and default properties there
-        [queuedTrack[@"context"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"library"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"library-version"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"os"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"osVersion"] shouldNotBeNil];
-        //[queuedTrack[@"context"][@"appVersion"] shouldNotBeNil];
-        //[queuedTrack[@"context"][@"appReleaseVersion"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"deviceModel"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"deviceManufacturer"] shouldNotBeNil];
-        //[queuedTrack[@"context"][@"carrier"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"idForAdvertiser"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"screenWidth"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"screenHeight"] shouldNotBeNil];
-        
-        // send a second event, wait for 200 from servers
-        [segmentio track:eventName properties:nil options:nil];
-        [[nc shouldEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-    
-    it(@"Should track with properties", ^{
-        NSString *eventName = @"Purchased an iPad 5";
-        NSDictionary *properties = @{@"Filter": @"Tilt-shift"};
-        [segmentio track:eventName properties:properties options:nil];
+- (id)initWithConfiguration:(SEGAnalyticsConfiguration *)configuration {
+  if (self = [super initWithConfiguration:configuration]) {
+    self.apiURL = [[NSURL alloc] initWithString:@"http://localhost:7001/v1/import"];
+  }
+  return self;
+}
 
-        [[expectFutureValue(@(segmentio.queue.count)) shouldEventually] equal:@1];
-        
-        NSDictionary *queuedTrack = segmentio.queue[0];
-        [[queuedTrack[@"action"] should] equal:@"track"];
-        [[queuedTrack[@"event"] should] equal:eventName];
-        [queuedTrack[@"timestamp"] shouldNotBeNil];
-        
-        [[queuedTrack[@"properties"] should] equal:properties];
-        
-        // test for context object and default properties there
-        [queuedTrack[@"context"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"library"] shouldNotBeNil];
-        
-        // send a second event, wait for 200 from servers
-        [segmentio track:eventName properties:properties options:nil];
-        [[nc shouldEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-    
-    it(@"Should track with context", ^{
-        NSString *eventName = @"Purchased an iPad 5";
-        NSDictionary *properties = @{@"Filter": @"Tilt-shift"};
-        NSDictionary *options = @{@"providers": @{@"Salesforce": @"true", @"Mixpanel": @"false"}};
-        [segmentio track:eventName properties:properties options:options];
-        
-        [[expectFutureValue(@(segmentio.queue.count)) shouldEventually] equal:@1];
-        
-        NSDictionary *queuedTrack = segmentio.queue[0];
-        
-        [[queuedTrack[@"action"] should] equal:@"track"];
-        [[queuedTrack[@"event"] should] equal:eventName];
-        [queuedTrack[@"timestamp"] shouldNotBeNil];
-        
-        [[queuedTrack[@"properties"] should] equal:properties];
-        
-        // test for context object and default properties there
-        [queuedTrack[@"context"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"library"] shouldNotBeNil];
-        
-        [queuedTrack[@"context"][@"providers"] shouldNotBeNil];
-        [[queuedTrack[@"context"][@"providers"][@"Salesforce"] should] equal:@"true"];
-        [[queuedTrack[@"context"][@"providers"][@"Mixpanel"] should] equal:@"false"];
-        [queuedTrack[@"context"][@"providers"][@"KISSmetrics"] shouldBeNil];
-        
-        // send a second event, wait for 200 from servers
-        [segmentio track:eventName properties:properties options:nil];
-        [[nc shouldEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-    
-    it(@"Should identify", ^{
-        NSString *userId = @"smile@wrinkledhippo.com";
-        [segmentio identify:userId traits:nil options:nil];
-        
-        [[expectFutureValue(@(segmentio.queue.count)) shouldEventually] equal:@1];
-        
-        NSDictionary *queuedTrack = segmentio.queue[0];
-        [[queuedTrack[@"action"] should] equal:@"identify"];
-        [[queuedTrack[@"userId"] should] equal:userId];
-        [queuedTrack[@"timestamp"] shouldNotBeNil];
-        [queuedTrack[@"sessionId"] shouldNotBeNil];
-        [queuedTrack[@"traits"] shouldBeNil];
-        
-        // test for context object and default properties there
-        [queuedTrack[@"context"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"library"] shouldNotBeNil];
-        
-        [segmentio identify:userId traits:nil options:nil];
-        [[nc shouldEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-    
-    it(@"Should identify with traits", ^{
-        NSDictionary *traits = @{@"Filter": @"Tilt-shift"};
-        [segmentio identify:nil traits:traits options:nil];
-        
-        [[expectFutureValue(@(segmentio.queue.count)) shouldEventually] equal:@1];
-        
-        NSDictionary *queuedTrack = segmentio.queue[0];
-        [[queuedTrack[@"action"] should] equal:@"identify"];
-        [queuedTrack[@"userId"] shouldBeNil];
-        [queuedTrack[@"timestamp"] shouldNotBeNil];
-        [queuedTrack[@"sessionId"] shouldNotBeNil];
-        [[queuedTrack[@"traits"] should] equal:traits];
+@end
 
-        // test for context object and default properties there
-        [queuedTrack[@"context"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"library"] shouldNotBeNil];
-        
-        [segmentio identify:nil traits:traits options:nil];
-        [[nc shouldEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-    
-    it(@"Should identify with context", ^{
-        NSDictionary *traits = @{@"Filter": @"Tilt-shift"};
-        NSDictionary *options = @{@"providers": @{@"Salesforce": @"true", @"Mixpanel": @"false"}};
-        [segmentio identify:nil traits:traits options:options];
-        
-        [[expectFutureValue(@(segmentio.queue.count)) shouldEventually] equal:@1];
-        
-        NSDictionary *queuedTrack = segmentio.queue[0];
-        [[queuedTrack[@"action"] should] equal:@"identify"];
-        [queuedTrack[@"userId"] shouldBeNil];
-        [queuedTrack[@"timestamp"] shouldNotBeNil];
-        [queuedTrack[@"sessionId"] shouldNotBeNil];
-        [[queuedTrack[@"traits"] should] equal:traits];
-        
-        // test for context object and default properties there
-        [queuedTrack[@"context"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"library"] shouldNotBeNil];
-        [queuedTrack[@"context"][@"providers"] shouldNotBeNil];
-        [[queuedTrack[@"context"][@"providers"][@"Salesforce"] should] equal:@"true"];
-        [[queuedTrack[@"context"][@"providers"][@"Mixpanel"] should] equal:@"false"];
-        [queuedTrack[@"context"][@"providers"][@"KISSmetrics"] shouldBeNil];
-        
-        // send a second event, wait for 200 from servers
-        [segmentio identify:nil traits:traits options:nil];
-        [[nc shouldEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-    
-    it(@"Should queue when not full", ^{
-        [[segmentio.queue should] beEmpty];
-        [segmentio.userId shouldBeNil];
-        NSString *userId = @"smile@wrinkledhippo.com";
-        [segmentio identify:userId traits:nil options:nil];
-        [[segmentio.userId shouldEventually] beNonNil];
-        [[segmentio.queue shouldEventually] have:1];
-        [[nc shouldNotEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-    
-    it(@"Should flush when full", ^{
-        NSString *eventName = @"Purchased an iPad 5";
-        NSDictionary *properties = @{@"Filter": @"Tilt-shift"};
-        [segmentio track:eventName properties:properties options:nil];
-        [segmentio track:eventName properties:properties options:nil];
-        [[segmentio.queue should] beEmpty];
-        [[segmentio.queue shouldEventually] have:2];
-        [[nc shouldEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-    
-    it(@"Should reset", ^{
-        NSString *eventName = @"Purchased an iPad 5";
-        NSDictionary *properties = @{@"Filter": @"Tilt-shift", @"category": @"Mobile", @"revenue": @"70.0", @"value": @"50.0", @"label": @"gooooga"};
-        NSDictionary *options = @{@"providers": @{@"Salesforce": @YES, @"HubSpot": @NO}};
-        
-        [segmentio track:eventName properties:properties options:options];
-        [[expectFutureValue(@(segmentio.queue.count)) shouldEventually] equal:@1];
-        [segmentio reset];
-        [[segmentio.queue should] beEmpty];
-        [[nc shouldNotEventually] receiveNotification:SegmentioDidSendRequestNotification];
-    });
-});
+@interface SEGSegmentioIntegrationTests : XCTestCase
 
-SPEC_END
+@property (nonatomic, strong) SEGSegmentioIntegration *integration;
+
+@end
+
+@implementation SEGSegmentioIntegrationTests
+
+- (void)setUp {
+  [super setUp];
+  
+  if ([self isCI]) {
+    SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"testWriteKey"];
+    configuration.flushAt = 1;
+    self.integration = [[SEGSegmentioIntegration alloc] initWithConfiguration:configuration];
+  } else {
+    SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"bvbqrhaeg4"];
+    configuration.flushAt = 1;
+    self.integration = [[SegmentioIntegrationDevelopment alloc] initWithConfiguration:configuration];
+  }
+}
+
+- (void)tearDown {
+  [super tearDown];
+
+  [self.integration reset];
+}
+
+- (void)testAnonymousIdIsPresent {
+  XCTAssertNotNil(self.integration.anonymousId);
+}
+
+- (void)testTrackAddsToQueue {
+  self.integration.configuration.flushAt = 2;
+
+  [self.integration track:self.event properties:self.properties options:self.options];
+
+  EXP_expect(self.integration.queue.count).will.equal(1);
+}
+
+- (void)testTrackRequestData {
+  self.integration.configuration.flushAt = 2;
+  [self.integration track:self.event properties:self.properties options:self.options];
+
+  EXP_expect(self.integration.queue.count).will.equal(1);
+  NSDictionary *msg = self.integration.queue.firstObject;
+  XCTAssertEqualObjects(@"track", msg[@"type"]);
+  XCTAssertEqualObjects(self.event, msg[@"event"]);
+  XCTAssertNotNil(msg[@"timestamp"]);
+  XCTAssertNotNil(msg[@"properties"]);
+  XCTAssertEqualObjects(self.properties, msg[@"properties"]);
+  XCTAssertEqualObjects(self.options[@"integrations"], msg[@"integrations"]);
+
+  NSDictionary *context = msg[@"context"];
+  XCTAssertNotNil(context[@"library"][@"name"]);
+  XCTAssertNotNil(context[@"library"][@"version"]);
+  XCTAssertNotNil(context[@"device"][@"manufacturer"]);
+  XCTAssertNotNil(context[@"device"][@"model"]);
+  XCTAssertNotNil(context[@"os"][@"name"]);
+  XCTAssertNotNil(context[@"os"][@"version"]);
+  XCTAssertNotNil(context[@"screen"][@"width"]);
+}
+
+- (void)testTrackPostsRequestNotifications {
+  if ([self isCI]) return;
+  
+  trvs_assertNotificationsObserved(self, ^{
+    [self.integration track:self.event properties:self.properties options:self.options];
+  }, SEGSegmentioDidSendRequestNotification, SEGSegmentioRequestDidSucceedNotification, nil);
+}
+
+- (void)testIdentifyAddsToQueue {
+  self.integration.configuration.flushAt = 2;
+
+  [self.integration identify:self.identity traits:self.traits options:self.options];
+
+  EXP_expect(self.integration.queue.count).will.equal(1);
+}
+
+- (void)testIdentifyRequestData {
+  self.integration.configuration.flushAt = 2;
+  [self.integration identify:self.identity traits:self.traits options:self.options];
+
+  EXP_expect(self.integration.queue.count).will.equal(1);
+  NSDictionary *msg = self.integration.queue.firstObject;
+  XCTAssertEqualObjects(@"identify", msg[@"type"]);
+  XCTAssertEqualObjects(self.identity, msg[@"userId"]);
+  XCTAssertNotNil(msg[@"timestamp"]);
+  XCTAssertNotNil(msg[@"anonymousId"]);
+  XCTAssertEqualObjects(self.traits, msg[@"traits"]);
+  XCTAssertEqualObjects(self.options[@"integrations"], msg[@"integrations"]);
+
+  NSDictionary *context = msg[@"context"];
+  XCTAssertNotNil(context[@"library"][@"name"]);
+  XCTAssertNotNil(context[@"library"][@"version"]);
+  XCTAssertNotNil(context[@"device"][@"manufacturer"]);
+  XCTAssertNotNil(context[@"device"][@"model"]);
+  XCTAssertNotNil(context[@"os"][@"name"]);
+  XCTAssertNotNil(context[@"os"][@"version"]);
+  XCTAssertNotNil(context[@"screen"][@"width"]);
+}
+
+- (void)testIdentifyPostsRequestNotifications {
+  if ([self isCI]) return;
+  
+  trvs_assertNotificationsObserved(self, ^{
+    [self.integration identify:self.identity traits:self.traits options:self.options];
+  }, SEGSegmentioDidSendRequestNotification, SEGSegmentioRequestDidSucceedNotification, nil);
+}
+
+- (void)testReset {
+  self.integration.configuration.flushAt = 2;
+  trvs_assertNotificationsNotObserved(self, ^{
+    [self.integration track:self.event properties:self.properties options:self.options];
+
+    NSString *anonymousId = self.integration.anonymousId;
+
+    [self.integration reset];
+
+    EXP_expect(self.integration.queue.count).will.equal(0);
+    XCTAssertNotEqualObjects(anonymousId, self.integration.anonymousId);
+  }, SEGSegmentioRequestDidSucceedNotification, SEGSegmentioDidSendRequestNotification, nil);
+}
+
+#pragma mark - Private
+
+- (NSString *)event {
+  return @"some event";
+}
+
+- (NSDictionary *)properties {
+  return @{ @"category": @"Mobile" };
+}
+
+- (NSString *)identity {
+  return @"some user";
+}
+
+- (NSDictionary *)traits {
+  return @{ @"FriendCount": @223 };
+}
+
+- (NSDictionary *)options {
+  return @{ @"integrations": @{ @"Salesforce": @YES, @"HubSpot": @NO } };
+}
+
+- (BOOL)isCI {
+  return [NSProcessInfo.processInfo.environment objectForKey:@"CI"] != nil;
+}
+
+@end
