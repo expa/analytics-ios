@@ -22,4 +22,6 @@
 @property (nonatomic, copy, readonly) NSDictionary *addressDictionary;
 @property (nonatomic, assign, readonly) BOOL hasKnownLocation;
 
+@property (nonatomic, strong) NSString *timestamp;
+
 @end

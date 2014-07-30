@@ -70,7 +70,7 @@
 }
 
 - (NSDictionary *)locationDictionary {
-  return [self dictionaryWithValuesForKeys:@[ @"city", @"country", @"latitude", @"longitude", @"speed" ]];
+  return [self dictionaryWithValuesForKeys:@[ @"city", @"country", @"latitude", @"longitude", @"speed", @"timestamp" ]];
 }
 
 - (NSDictionary *)addressDictionary {
@@ -81,9 +81,12 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
   if (!locations.count) return;
+    
+    CLLocation *location = [locations firstObject];
+    self.timestamp = [[location timestamp] description];
   
   __weak typeof(self) weakSelf = self;
-  [self.geocoder reverseGeocodeLocation:locations.firstObject completionHandler:^(NSArray *placemarks, NSError *error) {
+  [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
     __strong typeof(weakSelf) strongSelf = weakSelf;
     strongSelf.currentPlacemark = placemarks.firstObject;
   }];
