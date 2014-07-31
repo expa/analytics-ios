@@ -36,7 +36,6 @@
 		3242C9B01946ADA000FBE441 /* SEGLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32430A751914186C004EFF59 /* SEGLocation.m */; };
 		3242C9B11946ADA200FBE441 /* SEGBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2811D1908420D00FB48D7 /* SEGBluetooth.m */; };
 		3242C9B21946ADA900FBE441 /* SEGAnalyticsIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = EA65F96517C2ABA600389A1A /* SEGAnalyticsIntegration.m */; };
-		3242C9B31946ADB000FBE441 /* SEGSegmentioIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EDB65218C315F100A88A7E /* SEGSegmentioIntegration.m */; };
 		3242C9B41946AFA100FBE441 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = EA14A25217FB1E9400870901 /* settings.json */; };
 		3242C9B51946AFC500FBE441 /* SEGAmplitudeIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EDB63A18C315F100A88A7E /* SEGAmplitudeIntegration.m */; };
 		3242C9B61946AFC800FBE441 /* SEGBugsnagIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EDB63D18C315F100A88A7E /* SEGBugsnagIntegration.m */; };
@@ -118,8 +117,6 @@
 		D3EDB66318C315F100A88A7E /* SEGLocalyticsIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EDB64C18C315F100A88A7E /* SEGLocalyticsIntegration.m */; };
 		D3EDB66418C315F100A88A7E /* SEGMixpanelIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EDB64E18C315F100A88A7E /* SEGMixpanelIntegration.h */; };
 		D3EDB66518C315F100A88A7E /* SEGMixpanelIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EDB64F18C315F100A88A7E /* SEGMixpanelIntegration.m */; };
-		D3EDB66618C315F100A88A7E /* SEGSegmentioIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EDB65118C315F100A88A7E /* SEGSegmentioIntegration.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D3EDB66718C315F100A88A7E /* SEGSegmentioIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EDB65218C315F100A88A7E /* SEGSegmentioIntegration.m */; };
 		D3EDB66818C315F100A88A7E /* SEGTapstreamIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EDB65418C315F100A88A7E /* SEGTapstreamIntegration.h */; };
 		D3EDB66918C315F100A88A7E /* SEGTapstreamIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EDB65518C315F100A88A7E /* SEGTapstreamIntegration.m */; };
 		EA25892317C6979D000CEF61 /* SEGAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = F7200B7B17659B2F003F3138 /* SEGAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -243,8 +240,6 @@
 		D3EDB64C18C315F100A88A7E /* SEGLocalyticsIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEGLocalyticsIntegration.m; sourceTree = "<group>"; };
 		D3EDB64E18C315F100A88A7E /* SEGMixpanelIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEGMixpanelIntegration.h; sourceTree = "<group>"; };
 		D3EDB64F18C315F100A88A7E /* SEGMixpanelIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEGMixpanelIntegration.m; sourceTree = "<group>"; };
-		D3EDB65118C315F100A88A7E /* SEGSegmentioIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEGSegmentioIntegration.h; sourceTree = "<group>"; };
-		D3EDB65218C315F100A88A7E /* SEGSegmentioIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEGSegmentioIntegration.m; sourceTree = "<group>"; };
 		D3EDB65418C315F100A88A7E /* SEGTapstreamIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEGTapstreamIntegration.h; sourceTree = "<group>"; };
 		D3EDB65518C315F100A88A7E /* SEGTapstreamIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEGTapstreamIntegration.m; sourceTree = "<group>"; };
 		E83F0FBE9BA94A03A4883160 /* libPods-Analytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Analytics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -437,7 +432,6 @@
 				D3EDB64D18C315F100A88A7E /* Mixpanel */,
 				32A69C1F1979CF4A00D69943 /* Optimizely */,
 				32A8C60419107DBD00173AE5 /* Quantcast */,
-				D3EDB65018C315F100A88A7E /* Segmentio */,
 				32DF3277194666DA004098C1 /* Taplytics */,
 				D3EDB65318C315F100A88A7E /* Tapstream */,
 			);
@@ -514,15 +508,6 @@
 				D3EDB64F18C315F100A88A7E /* SEGMixpanelIntegration.m */,
 			);
 			path = Mixpanel;
-			sourceTree = "<group>";
-		};
-		D3EDB65018C315F100A88A7E /* Segmentio */ = {
-			isa = PBXGroup;
-			children = (
-				D3EDB65118C315F100A88A7E /* SEGSegmentioIntegration.h */,
-				D3EDB65218C315F100A88A7E /* SEGSegmentioIntegration.m */,
-			);
-			path = Segmentio;
 			sourceTree = "<group>";
 		};
 		D3EDB65318C315F100A88A7E /* Tapstream */ = {
@@ -695,7 +680,6 @@
 				D002E20A1987327700A304F3 /* ExpaProvider.h in Headers */,
 				D331BD331860F5F0007CB22F /* TSHit.h in Headers */,
 				D331BD341860F5F0007CB22F /* TSLogging.h in Headers */,
-				D3EDB66618C315F100A88A7E /* SEGSegmentioIntegration.h in Headers */,
 				32430A761914186C004EFF59 /* SEGLocation.h in Headers */,
 				D331BD351860F5F0007CB22F /* TSLogLevel.h in Headers */,
 				D3EDB66218C315F100A88A7E /* SEGLocalyticsIntegration.h in Headers */,
@@ -937,7 +921,6 @@
 				3242C9B61946AFC800FBE441 /* SEGBugsnagIntegration.m in Sources */,
 				3242C9BB1946AFDD00FBE441 /* SEGLocalyticsIntegration.m in Sources */,
 				3242C9AA1946AB4700FBE441 /* AnalyticsTests.m in Sources */,
-				3242C9B31946ADB000FBE441 /* SEGSegmentioIntegration.m in Sources */,
 				3242C9B11946ADA200FBE441 /* SEGBluetooth.m in Sources */,
 				3242C9BA1946AFD900FBE441 /* SEGGoogleAnalyticsIntegration.m in Sources */,
 				3242C9B91946AFD400FBE441 /* SEGFlurryIntegration.m in Sources */,
@@ -971,7 +954,6 @@
 				D3EDB65F18C315F100A88A7E /* SEGFlurryIntegration.m in Sources */,
 				D002E20B1987327700A304F3 /* ExpaProvider.m in Sources */,
 				D3EDB66518C315F100A88A7E /* SEGMixpanelIntegration.m in Sources */,
-				D3EDB66718C315F100A88A7E /* SEGSegmentioIntegration.m in Sources */,
 				D3EDB65D18C315F100A88A7E /* SEGCrittercismIntegration.m in Sources */,
 				32E2811F1908420D00FB48D7 /* SEGBluetooth.m in Sources */,
 				EAA604CA17C28C7C00911919 /* SEGAnalyticsRequest.m in Sources */,
