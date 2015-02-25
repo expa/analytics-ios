@@ -1,0 +1,1 @@
+PODS_IOS_TESTS_BUGSNAG_OTHER_LDFLAGS = -framework "SystemConfiguration"

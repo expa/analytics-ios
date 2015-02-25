@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?><document initialViewController="puo-Hy-QiQ" propertyAccessControl="none" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" toolsVersion="5053" type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" useAutolayout="YES" version="3.0">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Takeover Notification View Controller-->
+        <scene sceneID="YMc-Jc-CKb">
+            <objects>
+                <viewController customClass="MPTakeoverNotificationViewController" id="puo-Hy-QiQ" modalTransitionStyle="crossDissolve" sceneMemberID="viewController" storyboardIdentifier="MPNotificationViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide id="en5-wb-o36" type="top"/>
+                        <viewControllerLayoutGuide id="oJ2-nk-n4o" type="bottom"/>
+                    </layoutGuides>
+                    <view contentMode="scaleToFill" id="Wch-Xc-Avw" key="view">
+                        <rect height="568" key="frame" width="320" x="0.0" y="0.0"/>
+                        <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" id="j3M-ip-xjd" translatesAutoresizingMaskIntoConstraints="NO" userInteractionEnabled="NO" userLabel="Bg Image View" verticalHuggingPriority="251">
+                                <rect height="568" key="frame" width="320" x="0.0" y="0.0"/>
+                                <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-imageView-j3M-ip-xjd"/></userDefinedRuntimeAttributes></imageView>
+                            <view contentMode="scaleToFill" customClass="MPBgRadialGradientView" id="If2-9m-eT9" translatesAutoresizingMaskIntoConstraints="NO" userLabel="Bg Mask">
+                                <rect height="568" key="frame" width="320" x="0.0" y="0.0"/>
+                                <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                                <color alpha="0.0" colorSpace="calibratedWhite" key="backgroundColor" white="0.0"/>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-view-If2-9m-eT9"/></userDefinedRuntimeAttributes></view>
+                            <view contentMode="scaleToFill" customClass="MPAlphaMaskView" id="1s2-xv-3au" translatesAutoresizingMaskIntoConstraints="NO" userLabel="Image Mask">
+                                <rect height="435" key="frame" width="320" x="0.0" y="0.0"/>
+                                <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView contentMode="top" horizontalHuggingPriority="251" id="LyM-hA-PHV" translatesAutoresizingMaskIntoConstraints="NO" userLabel="Notif Image View" verticalHuggingPriority="251">
+                                        <rect height="400" key="frame" width="280" x="20" y="82"/>
+                                        <autoresizingMask heightSizable="YES" key="autoresizingMask" widthSizable="YES"/>
+                                        <constraints>
+                                            <constraint constant="280" firstAttribute="width" id="A3b-w6-LPB"/>
+                                            <constraint constant="400" firstAttribute="height" id="LQn-ew-MQG"/>
+                                        </constraints>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-imageView-LyM-hA-PHV"/></userDefinedRuntimeAttributes></imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" id="NtW-qx-qOt" translatesAutoresizingMaskIntoConstraints="NO" userLabel="Image Drag View">
+                                        <rect height="400" key="frame" width="280" x="20" y="84"/>
+                                        <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                                        <color alpha="0.0" colorSpace="calibratedWhite" key="backgroundColor" white="0.0"/>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-view-NtW-qx-qOt"/></userDefinedRuntimeAttributes></view>
+                                    <button contentHorizontalAlignment="center" contentMode="scaleToFill" contentVerticalAlignment="center" id="EGH-qT-4wM" lineBreakMode="middleTruncation" opaque="NO" translatesAutoresizingMaskIntoConstraints="NO" userLabel="Button - Close">
+                                        <rect height="35" key="frame" width="35" x="275" y="30"/>
+                                        <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                                        <constraints>
+                                            <constraint constant="35" firstAttribute="height" id="SzV-36-Kff"/>
+                                            <constraint constant="35" firstAttribute="width" id="bKp-so-XDQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" pointSize="13" type="system"/>
+                                        <inset key="contentEdgeInsets" maxX="0.0" maxY="10" minX="10" minY="0.0"/>
+                                        <state image="MPCloseBtn" key="normal">
+                                            <color alpha="1" blue="0.76470588235294112" colorSpace="calibratedRGB" green="0.70588235294117641" key="titleColor" red="0.6588235294117647"/>
+                                            <color alpha="0.0" colorSpace="calibratedWhite" key="titleShadowColor" white="0.0"/>
+                                        </state>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-button-EGH-qT-4wM"/></userDefinedRuntimeAttributes></button>
+                                </subviews>
+                                <color alpha="0.0" colorSpace="calibratedWhite" key="backgroundColor" white="0.0"/>
+                                <constraints>
+                                    <constraint constant="82" firstAttribute="top" firstItem="LyM-hA-PHV" id="ZDm-Xj-EEQ" secondAttribute="top" secondItem="1s2-xv-3au"/>
+                                    <constraint firstAttribute="centerX" id="nOP-MM-gCn" secondAttribute="centerX" secondItem="LyM-hA-PHV"/>
+                                    <constraint constant="10" firstAttribute="trailing" id="r9m-WG-rMb" secondAttribute="trailing" secondItem="EGH-qT-4wM"/>
+                                    <constraint constant="30" firstAttribute="top" firstItem="EGH-qT-4wM" id="uqp-oq-tHF" secondAttribute="top" secondItem="1s2-xv-3au"/>
+                                </constraints>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-view-1s2-xv-3au"/></userDefinedRuntimeAttributes></view>
+                            <label adjustsFontSizeToFit="NO" baselineAdjustment="alignBaselines" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" id="eF7-ct-CP3" lineBreakMode="tailTruncation" numberOfLines="0" opaque="NO" preferredMaxLayoutWidth="260" text="Notification Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" userInteractionEnabled="NO" verticalHuggingPriority="251">
+                                <rect height="25" key="frame" width="260" x="30" y="435"/>
+                                <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                                <constraints>
+                                    <constraint constant="260" firstAttribute="width" id="f7M-nn-fH8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" pointSize="20" type="boldSystem"/>
+                                <color alpha="1" colorSpace="calibratedWhite" key="textColor" white="1"/>
+                                <nil key="highlightedColor"/>
+                                <color alpha="1" colorSpace="calibratedWhite" key="shadowColor" white="0.0"/>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-label-eF7-ct-CP3"/></userDefinedRuntimeAttributes></label>
+                            <label adjustsFontSizeToFit="NO" baselineAdjustment="alignBaselines" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" id="MmD-8U-og7" lineBreakMode="tailTruncation" numberOfLines="0" opaque="NO" preferredMaxLayoutWidth="260" text="Notification body" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" userInteractionEnabled="NO" verticalHuggingPriority="251">
+                                <rect height="21" key="frame" width="260" x="30" y="460"/>
+                                <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" pointSize="16" type="system"/>
+                                <color alpha="1" blue="0.76470588235294112" colorSpace="calibratedRGB" green="0.70588235294117641" key="textColor" red="0.6588235294117647"/>
+                                <nil key="highlightedColor"/>
+                                <color alpha="1" colorSpace="calibratedWhite" key="shadowColor" white="0.0"/>
+                                <size height="1" key="shadowOffset" width="0.0"/>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-label-MmD-8U-og7"/></userDefinedRuntimeAttributes></label>
+                            <button contentHorizontalAlignment="center" contentMode="scaleToFill" contentVerticalAlignment="center" customClass="MPActionButton" id="LDp-cp-cpg" lineBreakMode="middleTruncation" opaque="NO" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect height="35" key="frame" width="67" x="127" y="496"/>
+                                <autoresizingMask flexibleMaxX="YES" flexibleMaxY="YES" key="autoresizingMask"/>
+                                <color alpha="1" blue="0.0" colorSpace="calibratedRGB" green="0.0" key="backgroundColor" red="0.0"/>
+                                <fontDescription key="fontDescription" pointSize="15" type="system"/>
+                                <inset key="contentEdgeInsets" maxX="15" maxY="9" minX="15" minY="8"/>
+                                <state key="normal" title="Cool!">
+                                    <color alpha="1" colorSpace="calibratedWhite" key="titleColor" white="1"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color alpha="1" colorSpace="calibratedWhite" key="titleColor" white="0.5"/>
+                                </state>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-button-LDp-cp-cpg"/></userDefinedRuntimeAttributes></button>
+                        </subviews>
+                        <color alpha="1" blue="0.12156862745098039" colorSpace="calibratedRGB" green="0.094117647058823528" key="backgroundColor" red="0.094117647058823528"/>
+                        <constraints>
+                            <constraint firstAttribute="top" firstItem="oJ2-nk-n4o" id="1wF-9Y-JlE" secondAttribute="bottom" secondItem="j3M-ip-xjd"/>
+                            <constraint firstAttribute="top" firstItem="j3M-ip-xjd" id="7FN-LA-fsE" secondAttribute="top" secondItem="Wch-Xc-Avw"/>
+                            <constraint firstAttribute="top" firstItem="eF7-ct-CP3" id="DAk-1W-QOq" secondAttribute="bottom" secondItem="1s2-xv-3au"/>
+                            <constraint firstAttribute="width" firstItem="eF7-ct-CP3" id="IfC-Ls-kOm" secondAttribute="width" secondItem="MmD-8U-og7"/>
+                            <constraint firstAttribute="width" firstItem="j3M-ip-xjd" id="Lnc-cn-mSW" secondAttribute="width" secondItem="If2-9m-eT9"/>
+                            <constraint firstAttribute="width" firstItem="1s2-xv-3au" id="NWH-Fr-taF" secondAttribute="width" secondItem="j3M-ip-xjd"/>
+                            <constraint firstAttribute="top" firstItem="1s2-xv-3au" id="Nr5-qR-uWj" secondAttribute="top" secondItem="j3M-ip-xjd"/>
+                            <constraint firstAttribute="centerX" id="NuK-mI-4RY" secondAttribute="centerX" secondItem="MmD-8U-og7"/>
+                            <constraint firstAttribute="centerX" firstItem="eF7-ct-CP3" id="Ple-yR-sUf" secondAttribute="centerX" secondItem="MmD-8U-og7"/>
+                            <constraint firstAttribute="leading" firstItem="1s2-xv-3au" id="Rdb-xl-vSi" secondAttribute="leading" secondItem="j3M-ip-xjd"/>
+                            <constraint firstAttribute="trailing" id="Zgs-3K-N1E" secondAttribute="trailing" secondItem="j3M-ip-xjd"/>
+                            <constraint constant="37" firstAttribute="top" firstItem="oJ2-nk-n4o" id="ZmZ-Jx-bjS" secondAttribute="bottom" secondItem="LDp-cp-cpg"/>
+                            <constraint firstAttribute="leading" firstItem="j3M-ip-xjd" id="bJ0-Sf-jdK" secondAttribute="leading" secondItem="Wch-Xc-Avw"/>
+                            <constraint firstAttribute="leading" firstItem="j3M-ip-xjd" id="crJ-FY-cZ4" secondAttribute="leading" secondItem="If2-9m-eT9"/>
+                            <constraint firstAttribute="top" firstItem="j3M-ip-xjd" id="cv2-h4-fvc" secondAttribute="top" secondItem="If2-9m-eT9"/>
+                            <constraint firstAttribute="top" firstItem="MmD-8U-og7" id="hDC-Mi-ipg" secondAttribute="bottom" secondItem="eF7-ct-CP3"/>
+                            <constraint firstAttribute="height" firstItem="j3M-ip-xjd" id="s2w-wS-P0V" secondAttribute="height" secondItem="If2-9m-eT9"/>
+                            <constraint constant="15" firstAttribute="top" firstItem="LDp-cp-cpg" id="vCY-0M-x1R" secondAttribute="bottom" secondItem="MmD-8U-og7"/>
+                            <constraint constant="-0.5" firstAttribute="centerX" id="vQ8-41-fqj" secondAttribute="centerX" secondItem="LDp-cp-cpg"/>
+                        </constraints>
+                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute keyPath="optimizelyId" type="string" value="_MPNotification-view-Wch-Xc-Avw"/></userDefinedRuntimeAttributes></view>
+                    <connections>
+                        <outlet destination="j3M-ip-xjd" id="EVc-3C-Pm6" property="backgroundImageView"/>
+                        <outlet destination="If2-9m-eT9" id="dIj-LB-Qog" property="bgMask"/>
+                        <outlet destination="MmD-8U-og7" id="B7o-i2-uMk" property="bodyView"/>
+                        <outlet destination="EGH-qT-4wM" id="Xjn-Xo-pek" property="closeButton"/>
+                        <outlet destination="1s2-xv-3au" id="8ow-LG-krW" property="imageAlphaMaskView"/>
+                        <outlet destination="NtW-qx-qOt" id="VGo-AD-HKH" property="imageDragView"/>
+                        <outlet destination="LQn-ew-MQG" id="UJF-hS-zLq" property="imageHeight"/>
+                        <outlet destination="LyM-hA-PHV" id="HDE-mT-R4c" property="imageView"/>
+                        <outlet destination="A3b-w6-LPB" id="zeQ-mE-r1S" property="imageWidth"/>
+                        <outlet destination="LDp-cp-cpg" id="LS3-Ih-mH9" property="okayButton"/>
+                        <outlet destination="eF7-ct-CP3" id="1i6-Xa-Dow" property="titleView"/>
+                    </connections>
+                </viewController>
+                <placeholder id="U1O-0Q-ISd" placeholderIdentifier="IBFirstResponder" sceneMemberID="firstResponder" userLabel="First Responder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="248"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image height="25" name="MPCloseBtn" width="25"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
