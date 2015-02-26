@@ -59,12 +59,25 @@
 		32CCD99C1919A4F4007B63BA /* Analytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CCD99B1919A4F4007B63BA /* Analytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32DF327A194666DA004098C1 /* SEGTaplyticsIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DF3278194666DA004098C1 /* SEGTaplyticsIntegration.h */; };
 		32DF327B194666DA004098C1 /* SEGTaplyticsIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DF3279194666DA004098C1 /* SEGTaplyticsIntegration.m */; };
-		32E113231908AC85006D9788 /* libPods-Analytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E113221908AC85006D9788 /* libPods-Analytics.a */; };
 		32E2811E1908420D00FB48D7 /* SEGBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E2811C1908420D00FB48D7 /* SEGBluetooth.h */; };
 		32E2811F1908420D00FB48D7 /* SEGBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E2811D1908420D00FB48D7 /* SEGBluetooth.m */; };
 		6182B863DB2D44D1B463AE3B /* libPods-iOS Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AE4A015CBF4E95B18D10A7 /* libPods-iOS Tests.a */; };
 		D002E20A1987327700A304F3 /* ExpaProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = D002E2071987327700A304F3 /* ExpaProvider.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D002E20B1987327700A304F3 /* ExpaProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D002E2081987327700A304F3 /* ExpaProvider.m */; };
+		D0DC5BBE1A9E864A00F091F9 /* libPods-Analytics-Amplitude-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB01A9E864A00F091F9 /* libPods-Analytics-Amplitude-iOS.a */; };
+		D0DC5BBF1A9E864A00F091F9 /* libPods-Analytics-Bugsnag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB11A9E864A00F091F9 /* libPods-Analytics-Bugsnag.a */; };
+		D0DC5BC01A9E864A00F091F9 /* libPods-Analytics-Countly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB21A9E864A00F091F9 /* libPods-Analytics-Countly.a */; };
+		D0DC5BC11A9E864A00F091F9 /* libPods-Analytics-CrittercismSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB31A9E864A00F091F9 /* libPods-Analytics-CrittercismSDK.a */; };
+		D0DC5BC21A9E864A00F091F9 /* libPods-Analytics-FlurrySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB41A9E864A00F091F9 /* libPods-Analytics-FlurrySDK.a */; };
+		D0DC5BC31A9E864A00F091F9 /* libPods-Analytics-GoogleAnalytics-iOS-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB51A9E864A00F091F9 /* libPods-Analytics-GoogleAnalytics-iOS-SDK.a */; };
+		D0DC5BC41A9E864A00F091F9 /* libPods-Analytics-Localytics-iOS-Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB61A9E864A00F091F9 /* libPods-Analytics-Localytics-iOS-Client.a */; };
+		D0DC5BC51A9E864A00F091F9 /* libPods-Analytics-Mixpanel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB71A9E864A00F091F9 /* libPods-Analytics-Mixpanel.a */; };
+		D0DC5BC61A9E864A00F091F9 /* libPods-Analytics-Optimizely-iOS-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB81A9E864A00F091F9 /* libPods-Analytics-Optimizely-iOS-SDK.a */; };
+		D0DC5BC71A9E864A00F091F9 /* libPods-Analytics-Quantcast-Measure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BB91A9E864A00F091F9 /* libPods-Analytics-Quantcast-Measure.a */; };
+		D0DC5BC81A9E864A00F091F9 /* libPods-Analytics-Reachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BBA1A9E864A00F091F9 /* libPods-Analytics-Reachability.a */; };
+		D0DC5BC91A9E864A00F091F9 /* libPods-Analytics-Taplytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BBB1A9E864A00F091F9 /* libPods-Analytics-Taplytics.a */; };
+		D0DC5BCA1A9E864A00F091F9 /* libPods-Analytics-Tapstream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BBC1A9E864A00F091F9 /* libPods-Analytics-Tapstream.a */; };
+		D0DC5BCB1A9E864A00F091F9 /* libPods-Analytics-TRVSDictionaryWithCaseInsensitivity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DC5BBD1A9E864A00F091F9 /* libPods-Analytics-TRVSDictionaryWithCaseInsensitivity.a */; };
 		D31C8F7E18A2D83700DA22A6 /* MPNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = D31C8F7D18A2D83700DA22A6 /* MPNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D331BCED185BFAA1007CB22F /* MPSurvey.h in Headers */ = {isa = PBXBuildFile; fileRef = D331BCEC185BFAA1007CB22F /* MPSurvey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D331BCF2185BFF49007CB22F /* CRFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = D331BCF0185BFF49007CB22F /* CRFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -142,10 +155,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1292362745B3499F9F8849DB /* Pods-AnalyticsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsTests.xcconfig"; path = "Pods/Pods-AnalyticsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		0F6CC88DAE510A620DCDEEF4 /* Pods-Analytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Analytics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Analytics/Pods-Analytics.debug.xcconfig"; sourceTree = "<group>"; };
 		23CD79ED9C3E478C83CB7A34 /* libPods-AnalyticsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnalyticsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AE4A015CBF4E95B18D10A7 /* libPods-iOS Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		288314B9A18241B284C25C5B /* Pods-Analytics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Analytics.xcconfig"; path = "Pods/Pods-Analytics.xcconfig"; sourceTree = "<group>"; };
 		3242C9981946A3E100FBE441 /* iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3242C99E1946A3E100FBE441 /* iOS Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS Tests-Info.plist"; sourceTree = "<group>"; };
 		3242C9A01946A3E100FBE441 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -171,13 +183,28 @@
 		32F9E6B31907300300ED295B /* libPods-AnalyticsTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-AnalyticsTests.a"; path = "Pods/build/Debug-iphoneos/libPods-AnalyticsTests.a"; sourceTree = "<group>"; };
 		32F9E6B61907320700ED295B /* libPods-AnalyticsTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-AnalyticsTests.a"; path = "Pods/build/Debug-iphoneos/libPods-AnalyticsTests.a"; sourceTree = "<group>"; };
 		32F9E6B91907323900ED295B /* libPods-Analytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics.a"; sourceTree = "<group>"; };
+		381C958388975933E51C823D /* Pods-iOS Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Tests/Pods-iOS Tests.release.xcconfig"; sourceTree = "<group>"; };
+		60642131E04DE80A7C005D4C /* Pods-Analytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Analytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-Analytics/Pods-Analytics.release.xcconfig"; sourceTree = "<group>"; };
 		70B38155D048462482A91850 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E94C0EE18932A5B004BD132 /* KWBlockMatchEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWBlockMatchEvaluator.h; sourceTree = "<group>"; };
 		7E94C0EF18932A5B004BD132 /* KWBlockMatchEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWBlockMatchEvaluator.m; sourceTree = "<group>"; };
-		8D0FCA5DB8CF4351BA2EC04C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		A1156BA5BDDB45C69CC4E6E1 /* Pods-iOS Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Tests.xcconfig"; path = "Pods/Pods-iOS Tests.xcconfig"; sourceTree = "<group>"; };
+		82B3E5A73C8BBD9E5E640542 /* Pods-iOS Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Tests/Pods-iOS Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D002E2071987327700A304F3 /* ExpaProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpaProvider.h; sourceTree = "<group>"; };
 		D002E2081987327700A304F3 /* ExpaProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpaProvider.m; sourceTree = "<group>"; };
+		D0DC5BB01A9E864A00F091F9 /* libPods-Analytics-Amplitude-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Amplitude-iOS.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Amplitude-iOS.a"; sourceTree = "<group>"; };
+		D0DC5BB11A9E864A00F091F9 /* libPods-Analytics-Bugsnag.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Bugsnag.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Bugsnag.a"; sourceTree = "<group>"; };
+		D0DC5BB21A9E864A00F091F9 /* libPods-Analytics-Countly.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Countly.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Countly.a"; sourceTree = "<group>"; };
+		D0DC5BB31A9E864A00F091F9 /* libPods-Analytics-CrittercismSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-CrittercismSDK.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-CrittercismSDK.a"; sourceTree = "<group>"; };
+		D0DC5BB41A9E864A00F091F9 /* libPods-Analytics-FlurrySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-FlurrySDK.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-FlurrySDK.a"; sourceTree = "<group>"; };
+		D0DC5BB51A9E864A00F091F9 /* libPods-Analytics-GoogleAnalytics-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-GoogleAnalytics-iOS-SDK.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-GoogleAnalytics-iOS-SDK.a"; sourceTree = "<group>"; };
+		D0DC5BB61A9E864A00F091F9 /* libPods-Analytics-Localytics-iOS-Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Localytics-iOS-Client.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Localytics-iOS-Client.a"; sourceTree = "<group>"; };
+		D0DC5BB71A9E864A00F091F9 /* libPods-Analytics-Mixpanel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Mixpanel.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Mixpanel.a"; sourceTree = "<group>"; };
+		D0DC5BB81A9E864A00F091F9 /* libPods-Analytics-Optimizely-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Optimizely-iOS-SDK.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Optimizely-iOS-SDK.a"; sourceTree = "<group>"; };
+		D0DC5BB91A9E864A00F091F9 /* libPods-Analytics-Quantcast-Measure.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Quantcast-Measure.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Quantcast-Measure.a"; sourceTree = "<group>"; };
+		D0DC5BBA1A9E864A00F091F9 /* libPods-Analytics-Reachability.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Reachability.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Reachability.a"; sourceTree = "<group>"; };
+		D0DC5BBB1A9E864A00F091F9 /* libPods-Analytics-Taplytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Taplytics.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Taplytics.a"; sourceTree = "<group>"; };
+		D0DC5BBC1A9E864A00F091F9 /* libPods-Analytics-Tapstream.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-Tapstream.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-Tapstream.a"; sourceTree = "<group>"; };
+		D0DC5BBD1A9E864A00F091F9 /* libPods-Analytics-TRVSDictionaryWithCaseInsensitivity.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Analytics-TRVSDictionaryWithCaseInsensitivity.a"; path = "Pods/build/Debug-iphoneos/libPods-Analytics-TRVSDictionaryWithCaseInsensitivity.a"; sourceTree = "<group>"; };
 		D309DBF218A2BD2900BA9F31 /* libFlurry_4.3.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.3.1.a; path = Pods/FlurrySDK/Flurry/libFlurry_4.3.1.a; sourceTree = "<group>"; };
 		D31C8F7D18A2D83700DA22A6 /* MPNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPNotification.h; path = Pods/Mixpanel/Mixpanel/MPNotification.h; sourceTree = "<group>"; };
 		D331BCEC185BFAA1007CB22F /* MPSurvey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPSurvey.h; path = Pods/Mixpanel/Mixpanel/MPSurvey.h; sourceTree = "<group>"; };
@@ -291,9 +318,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0DC5BBE1A9E864A00F091F9 /* libPods-Analytics-Amplitude-iOS.a in Frameworks */,
+				D0DC5BBF1A9E864A00F091F9 /* libPods-Analytics-Bugsnag.a in Frameworks */,
+				D0DC5BC01A9E864A00F091F9 /* libPods-Analytics-Countly.a in Frameworks */,
+				D0DC5BC11A9E864A00F091F9 /* libPods-Analytics-CrittercismSDK.a in Frameworks */,
+				D0DC5BC21A9E864A00F091F9 /* libPods-Analytics-FlurrySDK.a in Frameworks */,
+				D0DC5BC31A9E864A00F091F9 /* libPods-Analytics-GoogleAnalytics-iOS-SDK.a in Frameworks */,
+				D0DC5BC41A9E864A00F091F9 /* libPods-Analytics-Localytics-iOS-Client.a in Frameworks */,
+				D0DC5BC51A9E864A00F091F9 /* libPods-Analytics-Mixpanel.a in Frameworks */,
+				D0DC5BC61A9E864A00F091F9 /* libPods-Analytics-Optimizely-iOS-SDK.a in Frameworks */,
+				D0DC5BC71A9E864A00F091F9 /* libPods-Analytics-Quantcast-Measure.a in Frameworks */,
+				D0DC5BC81A9E864A00F091F9 /* libPods-Analytics-Reachability.a in Frameworks */,
+				D0DC5BC91A9E864A00F091F9 /* libPods-Analytics-Taplytics.a in Frameworks */,
+				D0DC5BCA1A9E864A00F091F9 /* libPods-Analytics-Tapstream.a in Frameworks */,
+				D0DC5BCB1A9E864A00F091F9 /* libPods-Analytics-TRVSDictionaryWithCaseInsensitivity.a in Frameworks */,
 				F78D29FA1765B382000B937E /* UIKit.framework in Frameworks */,
 				F7200B7717659B2F003F3138 /* Foundation.framework in Frameworks */,
-				32E113231908AC85006D9788 /* libPods-Analytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +399,17 @@
 				32E2811D1908420D00FB48D7 /* SEGBluetooth.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		4FED06344FCA49987A88800E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F6CC88DAE510A620DCDEEF4 /* Pods-Analytics.debug.xcconfig */,
+				60642131E04DE80A7C005D4C /* Pods-Analytics.release.xcconfig */,
+				82B3E5A73C8BBD9E5E640542 /* Pods-iOS Tests.debug.xcconfig */,
+				381C958388975933E51C823D /* Pods-iOS Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D002E2061987327700A304F3 /* Expa */ = {
@@ -547,10 +598,7 @@
 				3242C99C1946A3E100FBE441 /* iOS Tests */,
 				F7200B7517659B2F003F3138 /* Frameworks */,
 				F7200B7417659B2F003F3138 /* Products */,
-				8D0FCA5DB8CF4351BA2EC04C /* Pods.xcconfig */,
-				1292362745B3499F9F8849DB /* Pods-AnalyticsTests.xcconfig */,
-				288314B9A18241B284C25C5B /* Pods-Analytics.xcconfig */,
-				A1156BA5BDDB45C69CC4E6E1 /* Pods-iOS Tests.xcconfig */,
+				4FED06344FCA49987A88800E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -566,6 +614,20 @@
 		F7200B7517659B2F003F3138 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0DC5BB01A9E864A00F091F9 /* libPods-Analytics-Amplitude-iOS.a */,
+				D0DC5BB11A9E864A00F091F9 /* libPods-Analytics-Bugsnag.a */,
+				D0DC5BB21A9E864A00F091F9 /* libPods-Analytics-Countly.a */,
+				D0DC5BB31A9E864A00F091F9 /* libPods-Analytics-CrittercismSDK.a */,
+				D0DC5BB41A9E864A00F091F9 /* libPods-Analytics-FlurrySDK.a */,
+				D0DC5BB51A9E864A00F091F9 /* libPods-Analytics-GoogleAnalytics-iOS-SDK.a */,
+				D0DC5BB61A9E864A00F091F9 /* libPods-Analytics-Localytics-iOS-Client.a */,
+				D0DC5BB71A9E864A00F091F9 /* libPods-Analytics-Mixpanel.a */,
+				D0DC5BB81A9E864A00F091F9 /* libPods-Analytics-Optimizely-iOS-SDK.a */,
+				D0DC5BB91A9E864A00F091F9 /* libPods-Analytics-Quantcast-Measure.a */,
+				D0DC5BBA1A9E864A00F091F9 /* libPods-Analytics-Reachability.a */,
+				D0DC5BBB1A9E864A00F091F9 /* libPods-Analytics-Taplytics.a */,
+				D0DC5BBC1A9E864A00F091F9 /* libPods-Analytics-Tapstream.a */,
+				D0DC5BBD1A9E864A00F091F9 /* libPods-Analytics-TRVSDictionaryWithCaseInsensitivity.a */,
 				32D045551931FACD00A9F0A4 /* XCTest.framework */,
 				32E113251908AD1C006D9788 /* libPods-AnalyticsTests.a */,
 				32E113221908AC85006D9788 /* libPods-Analytics.a */,
@@ -844,7 +906,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-iOS Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Tests/Pods-iOS Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB672FCD0430415AB87EF64C /* Copy Pods Resources */ = {
@@ -859,7 +921,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Analytics-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Analytics/Pods-Analytics-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EA25892217C693DD000CEF61 /* Build Framework */ = {
@@ -988,7 +1050,7 @@
 /* Begin XCBuildConfiguration section */
 		3242C9A81946A3E100FBE441 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1156BA5BDDB45C69CC4E6E1 /* Pods-iOS Tests.xcconfig */;
+			baseConfigurationReference = 82B3E5A73C8BBD9E5E640542 /* Pods-iOS Tests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1015,7 +1077,7 @@
 		};
 		3242C9A91946A3E100FBE441 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1156BA5BDDB45C69CC4E6E1 /* Pods-iOS Tests.xcconfig */;
+			baseConfigurationReference = 381C958388975933E51C823D /* Pods-iOS Tests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1133,7 +1195,7 @@
 		};
 		F7200B8217659B2F003F3138 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 288314B9A18241B284C25C5B /* Pods-Analytics.xcconfig */;
+			baseConfigurationReference = 0F6CC88DAE510A620DCDEEF4 /* Pods-Analytics.debug.xcconfig */;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/Analytics.dst;
@@ -1194,7 +1256,7 @@
 		};
 		F7200B8317659B2F003F3138 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 288314B9A18241B284C25C5B /* Pods-Analytics.xcconfig */;
+			baseConfigurationReference = 60642131E04DE80A7C005D4C /* Pods-Analytics.release.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
